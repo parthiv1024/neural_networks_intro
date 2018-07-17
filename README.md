@@ -5,6 +5,11 @@ The second one is an image processing neural network created using Tensorflow an
 ## Dependencies
 The neural_network.py program uses numpy. To install numpy run -  
 sudo pip3 install numpy or sudo pip install numpy  
-The tensorflow_neural_network.py program uses tensorflow. To install tensorflow run -
+The tensorflow_neural_network.py program uses tensorflow. To install tensorflow run -  
 sudo pip3 install tensorflow or sudo pip install tensorflow
 ## Usage
+To execute the program run -  
+python3 <path_to_repository>/neural_network.py  
+python3 <path_to_repository>/tensorflow_neural_network.py
+## Credits
+Credits for this code go to Siraj Raval (||Source||)
