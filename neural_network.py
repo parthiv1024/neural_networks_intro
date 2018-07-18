@@ -30,10 +30,13 @@ class NeuralNetwork():
 
 			# Calculate the error (The difference between the desired output and predicted output)
 			error = training_set_outputs - output
-
-			# Multiply the error by input and again by gradient of sigmoid curve
-			# This means that less confident weights (more steep) are adjusted more
-			# This means inputs which are zero do not cause changes to the weights
+			
+			# This is not the error function, the error function is 0.5(error)^2
+			# The derivative of that is (error) * d(error)/dW = (error) * d(train_output - output)/dW
+			# that is = d(train_output - sigmoid(W*X))/dW
+			# that comes to (error) * (0 - (sigmoid_prime(W*X) * X)) = (error) * -sigmoid_prime(output) * X
+			# The adjustement is always negative of the gradient
+			# Therefore the adjustment = error * sigmoid_prime(output) * X^T (to allow the multiplication to work)
 			adjustment = dot(training_set_inputs.T, error * self.__sigmoid_derivative(output))
 
 			# Adjust the weights
